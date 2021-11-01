@@ -18,5 +18,6 @@ public class ExtentReport {
         logintest.pass("test case passed successfully");
 
         extent.flush();
+        System.out.println("Test case passed successfully");
     }
 }
