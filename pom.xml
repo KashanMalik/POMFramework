@@ -51,5 +51,42 @@
         <version>5.0.0</version>
     </dependency>
 
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.8.0-beta2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.8.0-beta2</version>
+        <scope>test</scope>
+    </dependency>
 </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>Functions/XmlFiles/${xmlfiles}</suiteXmlFile>
+                    </suiteXmlFiles>
+
+                    <SystemPropertyVariables>
+                        <executionbrowser>${browser}</executionbrowser>
+                        <appurl>${Url}</appurl>
+                    </SystemPropertyVariables>
+
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
 </project>
