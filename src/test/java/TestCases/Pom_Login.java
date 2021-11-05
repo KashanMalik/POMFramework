@@ -13,16 +13,9 @@ public class Pom_Login extends Pom_Base_class {
         logger=extent.createTest("Login");
         logger.info("Testcase for login to the page");
 
-        Login loginobj=new Login(driver);
-
         loginobj.login(excelobj.getStringData("Login",0,0), excelobj.getStringData("Login",0,1) );
         logger.pass("Login Testcase passed successfully");
     }
-
-    /*@Test(priority = 2)
-    public void logout(){
-
-    }*/
 
 
 }
