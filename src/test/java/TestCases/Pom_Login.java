@@ -1,7 +1,5 @@
 package TestCases;
 
-
-import PageObject.Login;
 import org.testng.annotations.Test;
 
 public class Pom_Login extends Pom_Base_class {

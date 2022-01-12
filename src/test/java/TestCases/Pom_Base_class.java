@@ -45,7 +45,7 @@ public class Pom_Base_class {
     /**************** Open browser using value pass from xml file at run time ****************************/
     @Parameters({"browser","Url"})
     @BeforeClass
-    public void set_up(String browser,String url){
+    public void set_up(@Optional("Chrome") String browser,@Optional("http://demo1.folio3.com:9200/my-account/") String url){
         Reporter.log("Setting up Browser and Url",true);
         driver=Browser_Manager.start_application(driver,browser,url);
         Reporter.log("Browser and Url set successfully",true);
@@ -58,17 +58,6 @@ public class Pom_Base_class {
         Reporter.log("Instantiation Object",true);
         loginobj=PageFactory.initElements(driver,Login.class);
     }
-    /**************** Open browser using value pass from config file ****************************/
-   /* @BeforeClass
-    public void set_up(){
-        Reporter.log("Setting up Browser and Url",true);
-        driver=Browser_Manager.start_application(driver,configobj.getBrowser(),configobj.getUrl());
-        Reporter.log("Browser and Url set successfully",true);
-
-        instantiate_objects();
-    }*/
-
-
 
     /**************** Capture screenshot in the end of testcase ****************************/
     @AfterMethod
